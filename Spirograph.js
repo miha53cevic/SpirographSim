@@ -35,13 +35,13 @@ class Spirograph {
         let x = this.R * ((1 - this.k) * Math.cos(this.t) + this.l * this.k * Math.cos((1 - this.k) / this.k * this.t)) + WIDTH / 2;
         let y = this.R * ((1 - this.k) * Math.sin(this.t) - this.l * this.k * Math.sin((1 - this.k) / this.k * this.t)) + HEIGHT / 2;
 
-        if (this.t <= 6 * Math.PI)
+        if (this.t <= 6.01 * Math.PI)
         {
             this.shape.push(new Point(x, y));
         } 
 
         // Dodaj kutu
-        this.t += 0.005;
+        this.t += 0.02;
 
         // Draw Center Point
         drawFillRect(WIDTH / 2 - 2, HEIGHT / 2 - 2, 4, 4, 'blue');
