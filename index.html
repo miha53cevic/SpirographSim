@@ -1,15 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Spirograph toy</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     <script src="mihaSimpleCanvas.js"></script>
     <script src="Spirograph.js"></script>
     <script src="main.js"></script>
 </head>
+
 <body>
-    <div id="canvasArea"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div id="canvasArea"></div>
+                <div class="display-4" id="showK"> display </div>
+                <div class="display-4" id="showL"> display </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <h2> Controls </h2>
+
+                <table align="center">
+                    <tr>
+                        <td align="left"> Show inner circle </td>
+                        <td>
+                            <input id="Ci" type="checkbox" onclick="showCi()" checked="true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left"> Show outer circle </td>
+                        <td>
+                            <input id="Co" type="checkbox" onclick="showCo()" checked="true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left"> Show inner circle path </td>
+                        <td>
+                            <input id="CiPath" type="checkbox" onclick="showCiPath()">
+                        </td>
+                    </tr>
+                </table>
+                <br><br>
+
+                <h4> Outer circle Radius </h4>
+                <input id="R" type="range" min="1" max="200" value="200" onchange="SliderChange()">
+
+                <br><br>
+
+                <h4> Inner circle Radius </h4>
+                <input id="r" type="range" min="1" max="200" value="75" onchange="SliderChange()">
+
+                <br><br>
+
+                <h4> A point distance </h4>
+                <input id="p" type="range" min="1" max="200" value="30" onchange="SliderChange()">
+
+                <br><br>
+
+                <h4> Period </h4>
+                <input id="t" type="range" min="1" max="20" value="6" onchange="PeriodChange()">
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
