@@ -45,6 +45,9 @@ function SliderChange() {
     let p = document.getElementById('p').value;
 
     app.Reset(R, r, p, 6 * Math.PI);
+    
+    document.getElementById('showK').textContent = "k = " + app.k;
+    document.getElementById('showL').textContent = "l = " + app.l;
 }
 
 function PeriodChange() {
@@ -53,4 +56,7 @@ function PeriodChange() {
     let p = document.getElementById('p').value;
 
     app.Reset(R, r, p, document.getElementById('t').value * Math.PI);
+    
+    document.getElementById('showK').textContent = "k = " + app.k;
+    document.getElementById('showL').textContent = "l = " + app.l;
 }
