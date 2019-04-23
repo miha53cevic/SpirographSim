@@ -22,8 +22,6 @@ class Spirograph {
         // Shape made by the spirograph
         this.shape = [];
 
-        this.finishedShape = false;
-
         console.log("l = " + this.l);
         console.log("k = " + this.k);
 
@@ -82,5 +80,22 @@ class Spirograph {
 
         ctx.strokeStyle = 'black';
         ctx.stroke();
+    }
+
+    Reset(R, r, p, period) {
+        this.R = R;
+        this.r = r;
+        this.p = p;
+
+        this.k = this.r / this.R;
+        this.l = this.p / this.r;
+
+        // Angle
+        this.t = 0;
+
+        this.period = period + 0.01;
+
+        // Shape made by the spirograph
+        this.shape = [];
     }
 }

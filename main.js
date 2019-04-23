@@ -1,10 +1,7 @@
 let app;
 
-function startApp(R = 200, r = 75, p = 30) {
-    delete app;
-    app = new Spirograph(R, r, p);
-
-    app.period = document.getElementById('t').value * Math.PI;
+function startApp() {
+    app = new Spirograph(200, 75, 30);
 
     document.getElementById('showK').textContent = "k = " + app.k;
     document.getElementById('showL').textContent = "l = " + app.l;
@@ -15,8 +12,6 @@ function startApp(R = 200, r = 75, p = 30) {
 function loop() {
     app.display();
     window.requestAnimationFrame(loop);
-
-    console.log(app.shape.length);
 }
 
 window.onload = function () {
@@ -49,9 +44,13 @@ function SliderChange() {
     let R = document.getElementById('R').value;
     let p = document.getElementById('p').value;
 
-    startApp(R, r, p);
+    app.Reset(R, r, p, 6 * Math.PI);
 }
 
 function PeriodChange() {
-    SliderChange();
+    let r = document.getElementById('r').value;
+    let R = document.getElementById('R').value;
+    let p = document.getElementById('p').value;
+
+    app.Reset(R, r, p, document.getElementById('t').value * Math.PI);
 }
