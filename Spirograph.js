@@ -93,7 +93,7 @@ class Spirograph {
         // Angle
         this.t = 0;
 
-        this.period = period + 0.01;
+        this.period = period;
 
         // Shape made by the spirograph
         this.shape = [];
