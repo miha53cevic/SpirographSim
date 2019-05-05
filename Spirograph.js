@@ -90,6 +90,8 @@ class Spirograph {
         this.k = this.r / this.R;
         this.l = this.p / this.r;
 
+        console.log("Period = " + period);
+
         // Angle
         this.t = 0;
 

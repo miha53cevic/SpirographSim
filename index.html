@@ -47,21 +47,30 @@
                             <input id="CiPath" type="checkbox" onclick="showCiPath()">
                         </td>
                     </tr>
+                    <tr>
+                        <td align="left"> Pause </td>
+                        <td>
+                            <input id="pauseBtn" type="checkbox" onclick="pause()">
+                        </td>
+                    </tr>
                 </table>
                 <br><br>
 
                 <h4> Outer circle Radius </h4>
-                <input id="R" type="range" min="1" max="200" value="200" onchange="SliderChange()">
+                <input id="R" type="number" min="1" max="200" value="200" style="text-align: center"
+                    onchange="SliderChange()">
 
                 <br><br>
 
                 <h4> Inner circle Radius </h4>
-                <input id="r" type="range" min="1" max="200" value="75" onchange="SliderChange()">
+                <input id="r" type="number" min="1" max="200" value="75" style="text-align: center"
+                    onchange="SliderChange()">
 
                 <br><br>
 
                 <h4> A point distance </h4>
-                <input id="p" type="range" min="1" max="200" value="30" onchange="SliderChange()">
+                <input id="p" type="number" min="1" max="200" value="30" style="text-align: center"
+                    onchange="SliderChange()">
 
                 <br><br>
 

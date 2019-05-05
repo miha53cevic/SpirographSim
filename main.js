@@ -1,4 +1,5 @@
 let app;
+let running = true;
 
 function startApp() {
     app = new Spirograph(200, 75, 30);
@@ -10,7 +11,9 @@ function startApp() {
 }
 
 function loop() {
-    app.display();
+    if (running)
+        app.display();
+
     window.requestAnimationFrame(loop);
 }
 
@@ -38,14 +41,21 @@ function showCiPath() {
     else app.showCiPath = false;
 }
 
+function pause() {
+    if (running)
+        running = false;
+    else running = true;
+}
+
 // Slider Functions
 function SliderChange() {
     let r = document.getElementById('r').value;
     let R = document.getElementById('R').value;
     let p = document.getElementById('p').value;
+    let period = document.getElementById('t').value;
 
-    app.Reset(R, r, p, 6 * Math.PI);
-    
+    app.Reset(R, r, p, period * Math.PI);
+
     document.getElementById('showK').textContent = "k = " + app.k;
     document.getElementById('showL').textContent = "l = " + app.l;
 }
@@ -54,9 +64,10 @@ function PeriodChange() {
     let r = document.getElementById('r').value;
     let R = document.getElementById('R').value;
     let p = document.getElementById('p').value;
+    let period = document.getElementById('t').value;
 
-    app.Reset(R, r, p, document.getElementById('t').value * Math.PI);
-    
+    app.Reset(R, r, p, period * Math.PI);
+
     document.getElementById('showK').textContent = "k = " + app.k;
     document.getElementById('showL').textContent = "l = " + app.l;
 }
